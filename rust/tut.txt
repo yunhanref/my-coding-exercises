@@ -1,0 +1,99 @@
+/*
+this is how to comment all together
+*/
+
+RUSTC COMPILER
+Rust compiler rustc turns all the rust code into binary numbers. Which means anyone can run it even without  rust installed.
+to compile and run at the same time we use cargo run at the terminal
+
+CARGO
+cargo.toml = text file that contains info about the project.
+cargo.toml installs dependencies, compiles and runs. A handy tool that makes rust easier.
+cargo commands:
+1. cargo build: compiles the code
+2. ./target/debug/main: runs the program without looking if its compiled or not
+3. cargo run: compiles and runs the program within one command
+4. cargo check: checks if there are any errors or syntax issues
+5. cargo new xxx = creates new project named `xxx`
+6. cargo build --release cargo run --release
+7. cargo
+
+CRATES
+crates are rust libraries
+to install type "cargo add crate_name" in the terminal.  Adds it to the toml file automatic and downloads it.
+
+VARIABLES
+variables are assigned with "let" keyword
+let variable = 30;
+by default, variable is immutable and the datatype of the assigned var is 32bit (u32)
+you can change datatype by adding a semi colon and datatype after the var name
+also you can change the var to mutable by adding mut keyword before the var name
+let mut X: u8 = 30;
+this means that the X variable is an 8bit mutable value.
+
+
+DATATYPES
+1. Integers: {
+    :u8-16-default32-64-128-arch = un-signed value (only 0 and positive numbers)
+    :i8-16-default32-64-128-arch = signed value (both negative and positive numbers)
+}
+2. Float: {
+    :f32,default:f64: immutable float
+}
+3. Boolean: {
+    :bool = true; / false;
+}
+4. CONST: {
+    mutlak sabitler. Mesela pi sayisi
+    const PI_NUM : f32 = 3.141692653589793
+}
+ARITHMETIC OPERATORS
++(sum) -(subtract) *(multiplication) /(division)  %(remainder or mod)
+
+COMPARISON OPERATORS
+compares left to right
+a == b - a equals to b
+a >= b - a is bigger or equal to b
+a <= b - a is smaller or equal to b
+a != b - a is not equal to b
+a > b - a is bigger than b
+a < b - a is smaller than b
+
+CHAR: 4bitlik yer kaplayan karakterler. emoji harf vesaire... tek tirnakla yazilmasi zorunludur.
+let karakter:char = 'a';
+let emoji:char = '🦀';
+emoji tablosu = win + ;
+
+
+**STRING:
+1. Stack Memory: LIFO, fast, fixed size variables, non-flexible, static allocation
+vid info: only fixed size variables can be used in stack such as bools and integers
+int,float,bool,fixed arrays,&str referance variables are all placed in stack memory management system.
+cant change variables during runtime.
+
+2. Heap Memory:
+can change variables during runtime.
+dynamic memory allocation
+strings, Vec<T>(dynamic arrays) and Box<T> are located in heap memory management.
+Rust, boyutu belli olan verileri varsayılan olarak Stack'te tutar. Boyutu esnek olan verileri ise
+Heap'e koyar ve her iki alanı da bir Çöp Toplayıcı (GC) olmadan "Sahiplik (Ownership)" kurallarıyla otomatik yönetir.
+
+
+datatype transformation:
+floattan integera donusturmek icin:
+let float: f32 = 3.31;
+let int: u8 = float as u8; yazabiliriz.
+
+ARRAY
+diziler
+let array:u8 = [1,2,3,4,5];
+array[index] = index erisimi
+//one type of data type allowed
+can add mut
+TUPLE
+demetler
+let tuple = (1,3.31, 'i',true);
+//multiple types of data is allowed
+can add mut
+x
+

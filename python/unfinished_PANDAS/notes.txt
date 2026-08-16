@@ -1,0 +1,18 @@
+PANDAS
+learnt: df = dataframe
+
+df: shows the whole dataframe
+df = pd.DataFrame([(values),(values)...]): creates dataframe manually
+df.columns, df.index: shows column/row info
+df.info(): shows general info about the dataframe
+df.head(): shows first rows of the dataframe
+df.tail(): shows last rows of the dataframe
+df.describe(): shows statistic about elements of the dataframe (min max mean etc.)
+path= "/x/y/z/data.csv" -> df = pd.read_csv(path) -> system now has access to the csv
+df.nunique(): shows the amount of unique numbers in each column
+df["X"].nunique: shows the amount of unique numbers in column named X
+df.shape: returns (columns,indexes/rows)
+df.size: returns columns*indexes value
+df.dample(int) returns x random indexes of the dataframe
+df.loc[[row numbers you want to show] or x:y,["Name of the columns you want to show"]: locates and shows the listed rows and columns inside the brackets
+df.iloc[[row numbers you want to show] or x:y,["Index of the columns you want to show"] locates and shows the listed rows and columns inside the brackets
