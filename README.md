@@ -42,4 +42,4 @@
 ```
 ## 👤 Python
 * **Why I Use Python:**
-    * I use python to participate ML race.
+    * I use python to participate in the ML race.
