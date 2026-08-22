@@ -1,0 +1,8 @@
+[package]
+name = "hesap_makinesi"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.28"
+egui = "0.36.1" # egui'yi masaüstünde çalıştırmak için gerekli olan çatı kütüphane
