@@ -69,9 +69,9 @@ class Quetzalcoatl(Teotl):
         time.sleep(1)
         print("Quetzalcoatl grants you: Serpent Spawner and Viper Toxcin")
     def serpent_spawner(self):
-      print("Used Skill: Serpent Spawner. You disappear into the shadows.")
+      print("Used Skill: Serpent Spawner. 10 deadly serpents have benn spawned.")
     def viper_toxcin(self):
-      print("Used Skill: Viper Toxcin. You .")
+      print("Used Skill: Viper Toxcin. You gained toxcin immunity.")
     def god_of(self):
         print("Quetzalcoatl is the god of Knowledge, Creation, and Civilisation.")
     def offering(self):
