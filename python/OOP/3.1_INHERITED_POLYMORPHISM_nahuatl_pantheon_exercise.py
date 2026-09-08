@@ -2,12 +2,11 @@
 from abc import ABC, abstractmethod
 import time
 
-class Teotl(ABC): # teotl means god in nahuatl language
+class Teotl(ABC):
     def __init__(self, name, gender):
         self.name = name or "not entered"
         self.gender = gender or "not entered"
 
-    #these will be polymorphed for each god class
     @abstractmethod
     def channeling(self):
         pass
@@ -29,19 +28,18 @@ class Tezcatlipoca(Teotl):
     def toxcatl(self):
         if self.is_toxcatl == True:
             print("Toxcatl is about to end, your god wants offering.")
-            offering_knowledge = False  # Doğru yazımı 'knowledge'
+            offering_knowledge = False  
 
             read_scrolls = str(input("Do you wish to know what your god accepts as offering? yes/no ")).upper()
 
             if read_scrolls == "YES":
                 print(f"When {self.name} read the scrolls, they learnt that your god Tezcatlipoca accepts blood and heart of a young and beautiful man in the month of 'Toxcatl'.")
-                offering_knowledge = True  # Bilgiyi öğrendiğimiz için True yapıyoruz
+                offering_knowledge = True 
             elif read_scrolls == "NO":
                 print("You haven't read the scroll.")
             else:
                 print("Unknown action.")
 
-            # Kontrolleri input bittikten hemen sonra yapıyoruz
             if offering_knowledge == True:
                 print("Your god is satisfied with the offering.")
             else:
@@ -49,7 +47,7 @@ class Tezcatlipoca(Teotl):
         else:
             print("It's not Toxcatl yet.")
 
-    # --- BURASI DÜZELDİ: Girintileri sola çekerek sınıfın ana metotları yaptık ---
+    
     def abilities(self):
         print(f"{self.name} channels Tezcatlipoca's powers...")
         time.sleep(1)
@@ -81,7 +79,6 @@ class Quetzalcoatl(Teotl):
     def channeling(self):
         print("pass")
 
-# Test edelim
 tezcatlipoca_cleric = Tezcatlipoca("Eren", "Male", True)
 tezcatlipoca_cleric.channeling()
 tezcatlipoca_cleric.toxcatl()
