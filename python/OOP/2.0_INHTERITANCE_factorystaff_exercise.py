@@ -1,21 +1,20 @@
-#INHERITANCE shared features of facroty staff class, inherited by ceo,worker,chief classes that has their own methods.
 class FactoryStaff:
-  def __init__(self,name: str,age: int,shift: str): #all factory staff has name,age and shift data
+  def __init__(self,name: str,age: int,shift: str):
     self.name = name
     self.age = age
     self.shift = shift
-  def get_shift(self): #method
+  def get_shift(self): 
     print(f"{self.name} has shift in {self.shift}")
-  def get_staff_info(self): #method
+  def get_staff_info(self): 
     print(self.name,self.age,self.shift)
 class Ceo(FactoryStaff):
   def ceo_role(self):
     print("factory is managed succesfully!")
 class Worker(FactoryStaff):
-  def worker_role(self,boxcount): #special method
+  def worker_role(self,boxcount):
     print(f"{self.name} had opened {boxcount} boxes today.")
 class Chief(FactoryStaff):
-  def chief_role(self): #special method
+  def chief_role(self):
     print(f"{self.name} have helped the work.")
 
 mudur = Ceo("savas",39,"morning")
