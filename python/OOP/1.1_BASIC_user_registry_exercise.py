@@ -1,5 +1,5 @@
-#we will make an user registry class. If the user is not over 18, things will happen
 import time
+
 def dots():
   time.sleep(1)
   print(".")
@@ -7,6 +7,7 @@ def dots():
   print("..")
   time.sleep(1)
   print("...")
+
 class registry:
   def __init__(self,name,age):
     self.n = name
@@ -19,7 +20,7 @@ class registry:
       print("no!")
     else:
       print("welcome in!")
-  def get_info(self): #get_info = method
+  def get_info(self): 
     print(f"name:{self.n},age:{self.a}")
 
 eren = registry("eren",19)
