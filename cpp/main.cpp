@@ -1,6 +1,12 @@
 #include <iostream>
 //#include "d4_lrncpp_2_13.h"
-#include "d5_quizz2.h"
+//#include "d5_quizz2.h"
+
+/* constant vals
+int constant_vals();
+int get_age();
+char get_char(int x);
+*/
 
 /* d5_quizz1.
 int write_answer(int x)
@@ -53,6 +59,14 @@ int main()
      SOLUTION IS DONE ABOVE.
     */
 
-    
+    /* CONSTANT VALS
+    constant_vals();
+    std::cout << get_age() << "\n";
+    std::cout << "you entered: " << get_char(31)<< "\n";
+    return 0;
+    */
+
+    std::cout << 1e3<< "\n";
+    std::cout << "merhaba";
 }
 
