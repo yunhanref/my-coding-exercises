@@ -1,13 +1,13 @@
 #used OOP methods: @abstractmethod, inheritance, polymorphism, super()
 from abc import ABC, abstractmethod
 import time
-
-class Teotl(ABC):
-    def __init__(self, name, gender):
-        self.name = name or "not entered"
+# Main Idea: NahuatlGods(common features of gods) =>INHETIRANCE=> Tezcatlipoca + Quetzalcoalt
+class Teotl(ABC):                                   # Creation of Teotl dynasty.
+    def __init__(self, name, gender):               # Common features among all Nahuatl gods.
+        self.name = name or "not entered"           
         self.gender = gender or "not entered"
 
-    @abstractmethod
+    @abstractmethod                                # Abstract methods are required methods for all inheritants.
     def channeling(self):
         pass
     @abstractmethod
@@ -20,12 +20,13 @@ class Teotl(ABC):
     def abilities(self):
         pass
 
-class Tezcatlipoca(Teotl):
+class Tezcatlipoca(Teotl):                            # First inheritant is Tezcatlipoca, It will take abstractmethods and common features. 
     def __init__(self, name, gender, is_toxcatl):
         super().__init__(name, gender)
         self.is_toxcatl = is_toxcatl if is_toxcatl is not None else "unknown..."
-
-    def toxcatl(self):
+    
+    # Special methods of tezcatlipoca
+    def toxcatl(self):                                
         if self.is_toxcatl == True:
             print("Toxcatl is about to end, your god wants offering.")
             offering_knowledge = False  
