@@ -25,7 +25,7 @@ int main()
     bool does_understand_rust = false; //false boolean
     printf("I'm %d years old.\n Im currently alive(%d)\n. I do understand rust...(%d)\n", my_age, is_alive, does_understand_rust);
     /*rust version:
-     *let my_age:u8 = 19;
+     *let my_age:i32 = 19;
      *let is_alive:bool = true;
      *let does_understand_rust:bool = false;
      *println!("Im {} years old", my_age);
