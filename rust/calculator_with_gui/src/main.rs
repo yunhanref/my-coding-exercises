@@ -13,7 +13,6 @@ fn main() -> eframe::Result<()> {
     )
 }
 
-// Matematiksel operatörleri tanımlıyoruz
 #[derive(Clone, Copy, PartialEq)]
 enum Operator {
     Topla,
@@ -23,7 +22,6 @@ enum Operator {
     Yok,
 }
 
-// Uygulamanın hafızası (State)
 struct HesapMakinesi {
     ekran: String,
     onceki_sayi: f64,
@@ -48,36 +46,30 @@ impl eframe::App for HesapMakinesi {
             ui.heading("Rust Hesap Makinesi");
             ui.add_space(10.0);
 
-            // Ekrandaki sayıyı gösteren alan
             ui.label(egui::RichText::new(&self.ekran).size(40.0));
             ui.add_space(20.0);
 
-            // Buton Izgarası
             egui::Grid::new("calculator_grid")
                 .spacing([15.0, 15.0])
                 .show(ui, |ui| {
-                    // 1. Satır
                     if ui.button(egui::RichText::new("7").size(24.0)).clicked() { self.rakam_ekle("7"); }
                     if ui.button(egui::RichText::new("8").size(24.0)).clicked() { self.rakam_ekle("8"); }
                     if ui.button(egui::RichText::new("9").size(24.0)).clicked() { self.rakam_ekle("9"); }
                     if ui.button(egui::RichText::new("+").size(24.0)).clicked() { self.operator_sec(Operator::Topla); }
                     ui.end_row();
 
-                    // 2. Satır
                     if ui.button(egui::RichText::new("4").size(24.0)).clicked() { self.rakam_ekle("4"); }
                     if ui.button(egui::RichText::new("5").size(24.0)).clicked() { self.rakam_ekle("5"); }
                     if ui.button(egui::RichText::new("6").size(24.0)).clicked() { self.rakam_ekle("6"); }
                     if ui.button(egui::RichText::new("-").size(24.0)).clicked() { self.operator_sec(Operator::Cikar); }
                     ui.end_row();
 
-                    // 3. Satır
                     if ui.button(egui::RichText::new("1").size(24.0)).clicked() { self.rakam_ekle("1"); }
                     if ui.button(egui::RichText::new("2").size(24.0)).clicked() { self.rakam_ekle("2"); }
                     if ui.button(egui::RichText::new("3").size(24.0)).clicked() { self.rakam_ekle("3"); }
                     if ui.button(egui::RichText::new("*").size(24.0)).clicked() { self.operator_sec(Operator::Carp); }
                     ui.end_row();
 
-                    // 4. Satır
                     if ui.button(egui::RichText::new("C").size(24.0)).clicked() { self.temizle(); }
                     if ui.button(egui::RichText::new("0").size(24.0)).clicked() { self.rakam_ekle("0"); }
                     if ui.button(egui::RichText::new("=").size(24.0)).clicked() { self.hesapla(); }
@@ -90,7 +82,6 @@ impl eframe::App for HesapMakinesi {
 
 impl HesapMakinesi {
     fn rakam_ekle(&mut self, rakam: &str) {
-        // Eğer bir operatöre basıldıktan sonra ilk kez rakama basılıyorsa ekranı temizle
         if self.yeni_sayi_mi {
             self.ekran = rakam.to_string();
             self.yeni_sayi_mi = false;
@@ -102,11 +93,10 @@ impl HesapMakinesi {
     }
 
     fn operator_sec(&mut self, op: Operator) {
-        // Ekrandaki mevcut yazıyı sayıya (f64) dönüştürüp hafızaya alıyoruz
         if let Ok(sayi) = self.ekran.parse::<f64>() {
             self.onceki_sayi = sayi;
             self.aktif_operator = op;
-            self.yeni_sayi_mi = true; // Bir sonraki rakam basılışında ekran sıfırlansın
+            self.yeni_sayi_mi = true; 
         }
     }
 
@@ -115,7 +105,6 @@ impl HesapMakinesi {
             return;
         }
 
-        // Ekrandaki ikinci sayıyı alıyoruz
         if let Ok(su_anki_sayi) = self.ekran.parse::<f64>() {
             let sonuc = match self.aktif_operator {
                 Operator::Topla => self.onceki_sayi + su_anki_sayi,
@@ -133,7 +122,6 @@ impl HesapMakinesi {
                 Operator::Yok => su_anki_sayi,
             };
 
-            // Sonucu ekrana yazdır ve durumları sıfırla
             self.ekran = sonuc.to_string();
             self.aktif_operator = Operator::Yok;
             self.yeni_sayi_mi = true;
