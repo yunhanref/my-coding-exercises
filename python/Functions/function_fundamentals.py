@@ -2,7 +2,7 @@
 def area():
   num1 = float(input("enter width of the rectangle: "))
   num2 = float(input("enter height of the rectangle: "))
-  return num1 * num2 #returns the multiplication value as thre result of the function. RETURN STATEMENT MAKES THE VALUE GLOBAL****
+  return num1 * num2 #returns the multiplication value as thre result of the function.
 print(f"your area is: {area()}")
 
 
