@@ -1,12 +1,4 @@
-#stack
-''' FIX THIS
-#! Fix adding list elements to the array instead of individual ints.
-for i in liste:
-    addindex = self.index
-    print(f"added to array: {i}")
-    self.array[addindex] = i
-    self.capacity += 1
-'''
+
 class Array():
     def __init__(self,capacity):
         self.capacity = capacity
