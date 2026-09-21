@@ -1,4 +1,4 @@
-# SIMMPLER AND BETTER QUEUE UPDATE
+# BETTER QUEUE UPDATE
 # Update: Added utility method that constantly asks the operations user may want to do... 
 # ...instead of typing everything statically in the source code which makes it uninteractive and useless in real life.
 #! queue
