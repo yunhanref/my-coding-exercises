@@ -5,7 +5,7 @@
 class Queue():
     def __init__(self):
         self.queue = []
-        self.first = 0 #! to avoid magic numbers inside code. Reading ease
+        self.first = 0 #! to avoid magic numbers inside code. Provides ease of reading
     def add_list(self,liste:list):
         for i in liste:
             print(f"adding element '{i}' of '{liste}' to the queue.")
